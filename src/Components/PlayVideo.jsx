@@ -9,10 +9,13 @@ import jack from '../assets/jack.png'
 import user_profile from '../assets/user_profile.jpg'
 import { API_KEY, value_converter } from '../data'
 import moment from 'moment'
+import { useParams } from 'react-router-dom'
 
 
 
-const PlayVideo = ({videoId}) => {
+const PlayVideo = () => {
+
+  const {videoId} = useParams()
 
   const [apiData, setApiData] = useState(null);
   const [channelData, setChannelData] = useState(null);
@@ -34,7 +37,7 @@ const PlayVideo = ({videoId}) => {
 
   useEffect(() => {
     fetchVideoData();
-  }, [])
+  }, [videoId])
 
   useEffect(() => {
     fetchOtherData()
@@ -64,7 +67,7 @@ const PlayVideo = ({videoId}) => {
       </Publisher>
       <VidDescription>
         <p>{apiData ? apiData.snippet.description.slice(0, 250) : 'Description Here'}</p>
-        <p>Subscribe GreatStack to Watch More Tutorials on web development</p>
+        <p>Subscribe {apiData ? apiData.snippet.channelTitle : ''} to Watch More</p>
         <hr />
         <h4>{apiData ? value_converter(apiData.statistics.commentCount) : "155"} Comments</h4>
         {commentData.map((item, index) => {
