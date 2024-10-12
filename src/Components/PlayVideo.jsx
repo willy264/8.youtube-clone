@@ -45,7 +45,7 @@ const PlayVideo = () => {
 
   return (
     <PlayingVideo>
-      <iframe src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"allowfullscreen></iframe>
+      <iframe src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       <h3>{apiData ? apiData.snippet.title : 'Title Here'}</h3>
       <PlayVideoInfo>
         <p>{apiData ? value_converter(apiData.statistics.viewCount) : '16k'} Views &bull; {apiData ? moment(apiData.snippet.publishedAt).fromNow() : ""}</p>
