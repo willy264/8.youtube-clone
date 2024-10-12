@@ -112,6 +112,16 @@ const PlayingVideo = styled.div`
     background-color: #ccc;
     margin: 10px 0;
   }
+
+  @media (max-width: 900px) {
+    flex-basis: 100%;
+
+    iframe {
+      width: 100%;
+      height: 50vw;
+    }
+  }
+
 `
 const PlayVideoInfo = styled.div`
   display: flex;
@@ -130,6 +140,11 @@ const PlayVideoInfo = styled.div`
     display: inline-flex;
     align-items: center;
     margin-left: 15px;
+  }
+  @media (max-width: 900px) {
+    margin-left: 0;
+    margin-right: 15px;
+    margin-top: 15px;
   }
 `
 const Publisher = styled.div`
@@ -220,6 +235,9 @@ const VidDescription = styled.div`
     }
   }
 
+  @media (max-width: 900px) {
+    padding-left: 0;
+  }
 `
 
 export default PlayVideo

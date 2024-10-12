@@ -76,7 +76,7 @@ const Input = styled.div`
       width: 15px;
     }
     @media (max-width: 900px) {
-    .input {
+    input {
       width: 100px;
     }
   }
@@ -93,8 +93,6 @@ const Profile = styled.div`
     border-radius: 50%;
   }
   @media (max-width: 900px) {
-    display: none;
-
     img {
       display: none;
     }

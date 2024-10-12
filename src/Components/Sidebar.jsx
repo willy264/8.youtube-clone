@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import home from '../assets/home.png'
 import game_icon from '../assets/game_icon.png'
 import automobiles from '../assets/automobiles.png'
@@ -22,6 +23,10 @@ const Sidebar = ({sidebar, category, setCategory}) => {
         <div className={`side-link ${category === 0 ? "active" : ""}`} onClick={() => setCategory(0)}>
           <img src={home} alt="" />
           <p>Home</p>
+        </div>
+        <div className={`side-link ${category === 20 ? "active" : ""}`} onClick={() => setCategory(20)}>
+          <img src={game_icon} alt="" />
+          <p>Anime</p>
         </div>
         <div className={`side-link ${category === 20 ? "active" : ""}`} onClick={() => setCategory(20)}>
           <img src={game_icon} alt="" />
@@ -86,12 +91,11 @@ const Sidebar = ({sidebar, category, setCategory}) => {
 
 const Aside = styled.div`
   background-color: #fff;
-  width: 15%;
+  width: fit-content;
   height: 100vh;
   position: fixed;
   top: 0;
-  padding-left: 2%;
-  padding-top: 80px;
+  padding: 80px 0 0 2%;
 
   .side-link {
     display: flex;
@@ -107,7 +111,7 @@ const Aside = styled.div`
   }
 
   &.small-sidebar {
-    width: 5%;
+    width: fit-content;
 
     p {
       display: none;
@@ -132,6 +136,11 @@ const ShortCut = styled.div`
     background-color: #ccc;
     width: 85%;
   }
+  @media (max-width: 900px) {
+    p {
+      display: none;
+    }
+  }
 `
 
 const Subscribed = styled.div`
@@ -144,6 +153,12 @@ const Subscribed = styled.div`
     width: 25px;
     border-radius: 50%;
     margin-right: 20px;
+  }
+  @media (max-width: 900px) {
+    margin-top: 30px;
+    h3, p {
+      display: none;
+    }
   }
 `
 

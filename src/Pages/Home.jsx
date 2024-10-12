@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import Sidebar from '../../Components/Sidebar'
-import Feed from '../../Components/Feed'
+import Sidebar from '../Components/Sidebar'
+import Feed from '../Components/Feed'
 
 const Home = ({sidebar}) => {
 
@@ -11,7 +11,6 @@ const Home = ({sidebar}) => {
     <>
       <Sidebar sidebar={sidebar} category={category} setCategory={setCategory} />
       <Container className={`container ${sidebar ? "" : 'large-container'}`}>
-        {/* <h2>{category}</h2> */}
         <Feed category={category} />
       </Container>
     </>
@@ -24,6 +23,13 @@ const Container = styled.div`
 
   &.large-container {
     padding-left: 7%;
+  }
+
+  @media (max-width: 900px) {
+    &.large-container, .container {
+    padding-left: 15%;
+    padding-right: 5%;
+    }
   }
 `
 

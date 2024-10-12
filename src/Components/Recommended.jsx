@@ -39,6 +39,11 @@ const Recommended = ({categoryId}) => {
 
 const Recommend = styled.div`
   flex-basis: 30%;
+  overflow: hidden;
+
+  @media (max-width: 900px) {
+    flex-basis: 100%;
+  }
 
   .side-video-list {
     display: flex;
