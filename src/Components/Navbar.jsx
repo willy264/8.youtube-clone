@@ -23,7 +23,7 @@ const Navbar = ({setSidebar}) => {
           <img src={search_icon} alt="" />          
         </div>
       </Input>
-      <Profile className='flex-div'>
+      <Profile className='flex-div menu-icon'>
         <img src={upload_icon} alt="" />
         <img src={more_icon} alt="" />
         <img src={notification_icon} alt="" />
@@ -52,6 +52,11 @@ const Image = styled.div`
   .logo {
     width: 130px;
   }
+  @media (max-width: 900px) {
+    .logo {
+      width: 90px;
+    }
+  }
 `
 
 const Input = styled.div`
@@ -70,6 +75,11 @@ const Input = styled.div`
     img {
       width: 15px;
     }
+    @media (max-width: 900px) {
+    .input {
+      width: 100px;
+    }
+  }
   }
 `
 
@@ -81,6 +91,17 @@ const Profile = styled.div`
   .user-icon {
     width: 35px;
     border-radius: 50%;
+  }
+  @media (max-width: 900px) {
+    display: none;
+
+    img {
+      display: none;
+    }
+    .user-icon {
+      display: block;
+      width: 30px;
+    }
   }
 `
 
