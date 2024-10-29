@@ -24,10 +24,10 @@ const Sidebar = ({sidebar, category, setCategory}) => {
           <img src={home} alt="" />
           <p>Home</p>
         </div>
-        <div className={`side-link ${category === 20 ? "active" : ""}`} onClick={() => setCategory(20)}>
+        {/* <div className={`side-link ${category === 32 ? "active" : ""}`} onClick={() => setCategory(32)}>
           <img src={game_icon} alt="" />
-          <p>Anime</p>
-        </div>
+          <p>Action</p>
+        </div> */}
         <div className={`side-link ${category === 20 ? "active" : ""}`} onClick={() => setCategory(20)}>
           <img src={game_icon} alt="" />
           <p>Gaming</p>

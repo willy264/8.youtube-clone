@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import menu_icon from '../assets/menu.png'
-import logo from '../assets/logo.png'
+import logo from '../assets/video-removebg-preview.png'
+import glogo from '../assets/OIP__26_-removebg-preview.png'
 import search_icon from '../assets/search.png'
 import upload_icon from '../assets/upload.png'
 import more_icon from '../assets/more.png'
@@ -9,18 +10,20 @@ import notification_icon from '../assets/notification.png'
 import profile_icon from '../assets/jack.png'
 import { Link } from 'react-router-dom'
 
-const Navbar = ({setSidebar}) => {
+const Navbar = ({ setSidebar }) => {
   return (
     <Nav className='flex-div'>
       <Image className='flex-div'>
-        <img src={menu_icon} onClick={()=> setSidebar(prev=>prev === false ? true : false)} className='menu-icon' alt="" />
-        <Link to='/'><img src={logo} alt="" className="logo" />
-</Link>
+        <img src={menu_icon} onClick={() => setSidebar(prev => prev === false ? true : false)} className='menu-icon' alt="" />
+        <Link to='/' className='logos'>
+          <img src={logo} alt="" className="logo" />
+          <img src={glogo} alt="" className="glogo" />
+        </Link>
       </Image>
       <Input className='flex-div'>
         <div className="search-box flex-div">
           <input type="text" placeholder='Search' />
-          <img src={search_icon} alt="" />          
+          <img src={search_icon} alt="" />
         </div>
       </Input>
       <Profile className='flex-div menu-icon'>
@@ -49,12 +52,24 @@ const Image = styled.div`
     width: 22px;
     margin-right: 25px;
   }
+  .logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
   .logo {
-    width: 130px;
+    width: 15%;
+  }
+  .glogo {
+    width: 30%;
   }
   @media (max-width: 900px) {
+    .logos {
+      justify-content: start;
+    }
     .logo {
-      width: 90px;
+      width: 10%;
     }
   }
 `
