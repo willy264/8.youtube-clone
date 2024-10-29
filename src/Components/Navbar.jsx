@@ -59,7 +59,7 @@ const Image = styled.div`
 
   }
   .logo {
-    width: 15%;
+    width: 5%;
   }
   .glogo {
     width: 30%;
